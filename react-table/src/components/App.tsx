@@ -4,12 +4,13 @@ import Table from './Table/Table'
 import { getRows } from '../db/rows'
 
 const App = () => {
-  const [rows] = useState(getRows())
+  const [rows, setRows] = useState(getRows())
+  const [searchQuery, setSearchQuery] = useState('')
 
   return (
     <div>
-      <Header />
-      <Table rows={rows} />
+      <Header searchQuery={searchQuery} setSearchQuery={setSearchQuery}/>
+      <Table rows={rows} setRows={setRows} searchQuery={searchQuery}/>
     </div>
   )
 }

@@ -34,9 +34,9 @@ const TableHead = ({
 
   return (
     <MuiTableHead>
-      <TableRow>
+      <TableRow sx={{backgroundColor:'LightSkyBlue'}}>
         <TableCell padding="checkbox">
-          <Checkbox color="primary" />
+          <Checkbox color="primary" onClick={onSelectAllClick}/>
         </TableCell>
 
         {cells.map((headCell) => (
